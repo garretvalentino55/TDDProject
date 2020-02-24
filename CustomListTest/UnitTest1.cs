@@ -50,7 +50,7 @@ namespace CustomListTest
             int value3 = 15;
             int value4 = 20;
             int value5 = 25;
-            int expected = 4;
+            int expected = 5;
             int actual;
 
             //Act
@@ -80,15 +80,32 @@ namespace CustomListTest
             Assert.AreEqual(expected, myList[1]);
         }
         [TestMethod]
-        public void Add_DifferentDataType_NotAllowed()
+        public void Add_MulitpleNumbers_CheckCapacity()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
-           
+            int value = 5;
+            int value2 = 10;
+            int value3 = 15;
+            int value4 = 20;
+            int value5 = 25;
+            int expected = 8;
+            int capacity;
+            int actual;
+
 
             //Act
 
+            myList.Add(value);
+            myList.Add(value2);
+            myList.Add(value3);
+            myList.Add(value4);
+            myList.Add(value5);
+            actual = myList.capacity;
+
             //Assert
+            Assert.AreEqual(expected, actual);
+
         }
     }
 }
