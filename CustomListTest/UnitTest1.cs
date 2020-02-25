@@ -151,7 +151,30 @@ namespace CustomListTest
         [TestMethod]
         public void Remove_AllValues_NothingLeftInList()
         {
+            // Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value13 = 52;
+            int value14 = 32;
+            int value15 = 3;
+            int expected = 0;
+            int actual;
+
+
+            //Act
+            myList.Add(value13);
+            myList.Add(value14);
+            myList.Add(value15);
+            myList.Remove(value13);
+            myList.Remove(value14);
+            myList.Remove(value15);
+            actual = myList.count;
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
 
         }
+        [TestMethod]
+        public void 
     }
 }
