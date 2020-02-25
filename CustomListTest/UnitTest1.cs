@@ -175,6 +175,78 @@ namespace CustomListTest
 
         }
         [TestMethod]
-        public void 
+        public void Remove_Strings_CheckDifferentDataTypes()
+        {
+            //Arrange
+            CustomList<string> myList = new CustomList<string>();
+            string name = "James";
+            string name2 = "Leo";
+            string name3 = "Frank";
+            string expected = 2;
+
+
+
+            //Act
+            myList.Add(name);
+            myList.Add(name2);
+            myList.Add(name3);
+            myList.Remove(name2);
+
+
+
+            //Assert
+            Assert.AreEqual(expected, myList.count);
+
+        }
+        [TestMethod]
+        public void Remove_MultipleValues_CheckIfAllowed()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value16 = 5;
+            int value17 = 5;
+            int value18 = 5;
+            int value19 = 5;
+            int expected = 4;
+            int acutal;
+
+            //Act
+            myList.Add(value16);
+            myList.Add(value17);
+            myList.Add(value18);
+            myList.Add(value19);
+            myList.Remove(7);
+            acutal = myList.count;
+           
+
+
+            //Assert
+            Assert.AreEqual(expected, acutal);
+        }
+        [TestMethod]
+        public void Remove_SameValue_RemoveTheFirstOne()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value16 = 5;
+            int value17 = 5;
+            int value18 = 5;
+            int value19 = 5;
+            int expected = 3;
+            int acutal;
+
+            //Act
+            myList.Add(value16);
+            myList.Add(value17);
+            myList.Add(value18);
+            myList.Add(value19);
+            myList.Remove(5);
+            acutal = myList.count;
+
+
+
+            //Assert
+            Assert.AreEqual(expected, acutal);
+        }
     }
 }
