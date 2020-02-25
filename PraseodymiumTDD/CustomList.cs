@@ -9,6 +9,7 @@ namespace PraseodymiumTDD
     public class CustomList<T>
     {
 
+
         public void Add(T item)
         {
             //increment count
@@ -18,6 +19,16 @@ namespace PraseodymiumTDD
             //check to make sure it persists
 
             //count == maxcapacity, we need to increase capacity and copy
+        }
+        public void Remove(T item)
+        {
+            //decrement count
+
+            //item needs to land at next available index
+
+            //check to make sure it persists
+
+            //count == maxcapacity, we need to decrease capacity and copy
         }
     }
 }

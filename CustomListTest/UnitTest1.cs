@@ -90,7 +90,6 @@ namespace CustomListTest
             int value4 = 20;
             int value5 = 25;
             int expected = 8;
-            int capacity;
             int actual;
 
 
@@ -101,10 +100,57 @@ namespace CustomListTest
             myList.Add(value3);
             myList.Add(value4);
             myList.Add(value5);
-            actual = myList.capacity;
+            actual = myList.Capacity;
 
             //Assert
             Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void Remove_OneNumber_NolongerThere()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value6 = 9;
+            int value7 = 2;
+            int expected = 1;
+            int actual;
+
+            //Act
+            myList.Add(value6);
+            myList.Add(value7);
+            myList.Remove(value6);
+            actual = myList.count;
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void Remove_OneNumber_MakeSureIndecencyCorrect()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value10 = 17;
+            int value11 = 29;
+            int value12 = 72;
+            int expected = 72;
+
+
+
+            //Act
+            myList.Add(value10);
+            myList.Add(value11);
+            myList.Add(value12);
+            myList.Remove(value11);
+
+            //Assert
+            Assert.AreEqual(expected, myList[1]);
+        }
+        [TestMethod]
+        public void Remove_AllValues_NothingLeftInList()
+        {
 
         }
     }
