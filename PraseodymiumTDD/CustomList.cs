@@ -9,9 +9,36 @@ namespace PraseodymiumTDD
     public class CustomList<T>
     {
 
+        //Member Variables 
+        int count;
+        int capacity;
+        T[] items;
+        
 
+
+        //Constructor 
+        public CustomList()
+        {
+            count = 0;
+            capacity = 0;
+            items = new T[capacity];
+            
+        }
+        
+
+
+        //Member Methods
         public void Add(T item)
         {
+
+            items[count] = item;
+            items = new T[4];
+            bool checkIfFull =           
+
+
+
+
+           
             //increment count
 
             //item needs to land at next available index
@@ -30,5 +57,6 @@ namespace PraseodymiumTDD
 
             //count == maxcapacity, we need to decrease capacity and copy
         }
+
     }
 }
