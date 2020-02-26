@@ -12,40 +12,66 @@ namespace PraseodymiumTDD
         //Member Variables 
         int count;
         int capacity;
-        T[] items;
-        
+        T[] myArray;
 
 
         //Constructor 
         public CustomList()
         {
             count = 0;
-            capacity = 0;
-            items = new T[capacity];
+            capacity = 4;
+            myArray = new T[capacity];
             
         }
-        public int Count { get; }
-        public int Capacity { get; set; }
+        public T this[int i]
+        {
+            get { return myArray[i]; }
+            set { myArray[i] = value; }
+        }
 
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+        }
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+            set
+            {
+                capacity = value;
+            }
+        }
+            
+    
         //Member Methods
         public void Add(T item)
         {
             if (count == capacity)
             {
-
-                items[count] = item;
-                items = new T[4];
+                T[] tempArray = new T[capacity *= 2];
+               
                 for (int i = 0; i < count; i++)
                 {
-
+                    tempArray[i] = myArray[i];
                 }
-
+                myArray = tempArray;
+                myArray[count] = item;
             }
-
+            else
+            {
+                myArray[count] = item;
+            }
+            
 
 
             //increment count
-
+            count++;
             //item needs to land at next available index
 
             //check to make sure it persists
@@ -54,6 +80,14 @@ namespace PraseodymiumTDD
         }
         public void Remove(T item)
         {
+
+            if (true)
+            {
+                for ()
+                {
+
+                }
+            }
             //decrement count
 
             //item needs to land at next available index

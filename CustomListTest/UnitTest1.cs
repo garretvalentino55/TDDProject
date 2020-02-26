@@ -10,14 +10,14 @@ namespace CustomListTest
         public void Add_OneValue_CountIncrement()
         {
             //Arrange
-            CustomList<int> myList = new CustomList<int>();
+            CustomList<int> myArray = new CustomList<int>();
             int value1 = 5;
             int expected = 1;
             int actual;
 
             //Act
-            myList.Add(value1);
-            actual = myList.Count;
+            myArray.Add(value1);
+            actual = myArray.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -34,7 +34,7 @@ namespace CustomListTest
             //Act
 
             myList.Add(newValue);
-            actual = myList.count;
+            actual = myList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -59,7 +59,7 @@ namespace CustomListTest
             myList.Add(value3);
             myList.Add(value4);
             myList.Add(value5);
-            actual = myList.count;
+            actual = myList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -120,7 +120,7 @@ namespace CustomListTest
             myList.Add(value6);
             myList.Add(value7);
             myList.Remove(value6);
-            actual = myList.count;
+            actual = myList.Count;
 
 
             //Assert
@@ -167,7 +167,7 @@ namespace CustomListTest
             myList.Remove(value13);
             myList.Remove(value14);
             myList.Remove(value15);
-            actual = myList.count;
+            actual = myList.Count;
 
 
             //Assert
@@ -182,7 +182,7 @@ namespace CustomListTest
             string name = "James";
             string name2 = "Leo";
             string name3 = "Frank";
-            string expected = 2;
+            int expected = 2;
 
 
 
@@ -195,7 +195,7 @@ namespace CustomListTest
 
 
             //Assert
-            Assert.AreEqual(expected, myList.count);
+            Assert.AreEqual(expected, myList.Count);
 
         }
         [TestMethod]
@@ -216,7 +216,7 @@ namespace CustomListTest
             myList.Add(value18);
             myList.Add(value19);
             myList.Remove(7);
-            acutal = myList.count;
+            acutal = myList.Count;
            
 
 
@@ -241,7 +241,7 @@ namespace CustomListTest
             myList.Add(value18);
             myList.Add(value19);
             myList.Remove(5);
-            acutal = myList.count;
+            acutal = myList.Count;
 
 
 

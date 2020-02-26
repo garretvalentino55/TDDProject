@@ -10,7 +10,7 @@ namespace PraseodymiumTDD
     {
         static void Main(string[] args)
         {
-            List<int> numbers = new List<int>();
+            CustomList<int> numbers = new CustomList<int>();
             numbers.Add(2);
             numbers.Add(4);
             numbers.Add(6);
