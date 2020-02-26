@@ -24,21 +24,26 @@ namespace PraseodymiumTDD
             items = new T[capacity];
             
         }
-        
-
+        public int Count { get; }
+        public int Capacity { get; set; }
 
         //Member Methods
         public void Add(T item)
         {
+            if (count == capacity)
+            {
 
-            items[count] = item;
-            items = new T[4];
-            bool checkIfFull =           
+                items[count] = item;
+                items = new T[4];
+                for (int i = 0; i < count; i++)
+                {
+
+                }
+
+            }
 
 
 
-
-           
             //increment count
 
             //item needs to land at next available index
