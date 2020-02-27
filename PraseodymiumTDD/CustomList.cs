@@ -22,6 +22,7 @@ namespace PraseodymiumTDD
             capacity = 4;
             myArray = new T[capacity];
             
+            
         }
         public T this[int i]
         {
@@ -67,27 +68,43 @@ namespace PraseodymiumTDD
             {
                 myArray[count] = item;
             }
-            
+            count++;
 
 
             //increment count
-            count++;
+
             //item needs to land at next available index
 
             //check to make sure it persists
 
             //count == maxcapacity, we need to increase capacity and copy
         }
-        public void Remove(T item)
+        public bool Remove(T item)
         {
-
-            if (true)
+            bool statment = false;
+            T[] tempArray = new T[capacity];
+            for (int i = 0, j = 0 ; i < Count; i++,j++)
             {
-                for ()
+               
+                if (myArray[i].Equals(item))
                 {
-
+                    //myArray[i] = default(T);
+                    statment = true;
+                    
+                    j--;
+                   
+                }
+                else
+                {
+                    tempArray[j] = myArray[i];
                 }
             }
+            if (statment)
+            {
+                count--;
+            }
+            myArray = tempArray;
+            return statment;
             //decrement count
 
             //item needs to land at next available index
